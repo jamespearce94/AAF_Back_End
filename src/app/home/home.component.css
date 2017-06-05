@@ -1,0 +1,234 @@
+:host {
+  display: block;
+  padding: 0 16px;
+}
+
+input {
+  width: 200px;
+  height: 30px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0 0 0 8px;
+}
+
+
+
+body{
+    background:#fff;
+
+}
+.search-button-activity{
+    height:30px;
+    background-color:#FC563B;
+}
+h1 {
+  font-size: 30px;
+  font-weight: normal;
+  letter-spacing: 0.1px;
+  line-height: 48px;
+  padding-top: 10px
+}
+.search-result .title h3 {
+    margin: 0 0 15px;
+    color: #333;
+}
+.search-result .title p {
+    font-size: 12px;
+    color: #333;
+}
+.activity{
+  margin-left: 37%;
+    padding-bottom: 20px;
+}
+.activity-search{
+  padding-top: 10px;
+  margin-left: 40%;
+}
+
+.search-input{
+  width: 200px;
+  height: 30px;
+}
+.kudos{
+  background-color: #FC563B;
+  border-radius: 0px;
+  margin: 5px;
+  padding: 5px;
+  width: 75px;
+  font-size: 16px;
+  font-weight: inherit;
+}
+.kudos:hover {
+    background-color: #F22F26;
+    border-radius: 0px;
+    margin: 5px;
+    padding: 5px;
+    width: 75px;
+    font-size: 16px;
+    font-weight: inherit;
+    color:#FFF !important;
+}
+.well {
+    border: 0;
+    padding: 50px;
+    min-height: 63px;
+    background: #fff;
+    box-shadow: none;
+    border-radius: 3px;
+    position: relative;
+    max-height: 100000px;
+    border-bottom: 2px solid #ccc;
+    transition: max-height 0.5s ease;
+    -o-transition: max-height 0.5s ease;
+    -ms-transition: max-height 0.5s ease;
+    -moz-transition: max-height 0.5s ease;
+    -webkit-transition: max-height 0.5s ease;
+}
+.form-control {
+    height: 45px;
+    padding: 10px;
+    font-size: 16px;
+    box-shadow: none;
+    border-radius: 0;
+    position: relative;
+}
+
+
+
+
+
+
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+body {padding-top:50px;}
+
+
+.box-background {
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.16), 0px 0px 3px 0px rgba(0, 0, 0, 0.12);
+    padding: 10px 25px;
+    padding-bottom: 25px;
+    display:block;
+    margin-top: 30px;
+
+}
+
+.box-icon {
+    background-color: #28292a;
+    color: rgba(255, 255, 255, 0.87);
+    border-radius: 50%;
+    display: table;
+    height: 85px;
+    margin: 0 auto;
+    width: 85px;
+    margin-top: -50px;
+}
+.box-icon span {
+    color: #fff;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.info h4 {
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: 0.1px;
+  line-height: 48px;
+
+}
+.info > p {
+    color: #717171;
+    font-size: 16px;
+    padding-top: 5px;
+    text-align: justify;
+}
+.info > a {
+    background-color: #03a9f4;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    color: #fff;
+    transition: all 0.5s ease 0s;
+}
+.info > a:hover {
+    background-color: #0288d1;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+    color: #fff;
+    transition: all 0.5s ease 0s;
+}
+
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+/* apply a natural box layout model to all elements, but allowing components to change */
+
+.activity-feed {
+    padding: 15px;
+}
+.activity-feed .feed-item {
+    position: relative;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    border-left: 3px solid #F22F26;
+}
+.activity-feed .feed-item:last-child {
+    border-color: transparent;
+}
+.activity-feed .feed-item:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: -8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 6px;
+    background: #fff;
+    border: 2px solid #F22F26;
+}
+.activity-feed .feed-item .date {
+    position: relative;
+    top: -15px;
+    left:20px;
+    color: #F22F26;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.activity-feed .feed-item .text {
+    position: relative;
+    top: -7px;
+    left:20px;
+    text-transform: uppercase;
+    color: #000;
+}
+.activity-feed .feed-item .distance{
+    position: relative;
+    top: -7px;
+    left:20px;
+    color: #8f8f8f;
+}
+.activity-feed .feed-item .activity-icon{
+    position: relative;
+    top: 2px;
+    left:-10px;
+    color: #8f8f8f;  }
+
+.activity-feed .feed-item .activity-buttons button{
+    padding:0px 13.5px;
+    height:35px;
+    margin-left: 0.5em;
+    background-color: #F22F26;
+
+}
+.activity-feed .feed-item .activity-buttons button {
+    padding:0px 13.5px;
+    height:40px;
+    margin-left: 0.5em;
+    background-color: #F22F26;
+
+}
+.progress-bar{
+    background-color: #F22F26;
+    width: 100%;
+}
+

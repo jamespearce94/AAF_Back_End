@@ -1,0 +1,128 @@
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="card col-12">
+        <div class="container bootstrap snippets">
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <div class="contact-detail-box">
+                        <i class="fa fa-user-circle fa-3x" style="margin-top: 7px;"></i>
+                        <h4>{{activity.name}}</h4>
+                        <i class="fa fa-trophy"></i> <a>Fitness Pro</a>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-sm-4">
+                    <div class="contact-detail-box">
+                        <i class="fa fa-bicycle fa-3x text-colored"></i>
+                        <h4>{{activity.text}} - {{activity.activityType}}</h4>
+                        <i class="fa fa-quote-right text-colored"></i>
+                        <a
+                                class="text-muted">{{activity.trackPoints[0].time | date:'d MMM y, h:mm a'}}</a>
+                    </div>
+                </div><!-- end col -->
+
+                <div class="col-sm-4">
+                    <div class="contact-detail-box">
+                        <i class="fa fa-hand-rock-o fa-3x text-colored"></i>
+                        <h4>{{activity['kudos'].length }}</h4>
+                        <a *ngIf="!activity['kudos'].length " class="text-muted">No Kudos yet !</a>
+                        <a *ngIf="(activity['kudos'].length  >0) &&(activity['kudos'].length <10)" class="text-muted">Kudos
+                            nice effort!</a>
+                        <a *ngIf="activity['kudos'].length  >10" class="text-muted">Kudos Incredible effort !</a>
+                    </div>
+                </div><!-- end col -->
+
+            </div>
+            <!-- end row -->
+
+
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-sm-12">
+                    <div class="contact-map" style="padding-bottom: 30px;">
+
+                        <sebm-google-map [latitude]="activity.trackPoints[0].lat"
+                                         [longitude]="activity.trackPoints[0].lon" [zoom]="11">
+                            <sebm-google-map-polyline>
+                                <sebm-google-map-polyline-point *ngFor="let point of activity.trackPoints"
+                                                                [latitude]="point.lat" [longitude]="point.lon">
+                                </sebm-google-map-polyline-point>
+                            </sebm-google-map-polyline>
+                        </sebm-google-map>
+                    </div>
+                </div><!-- end col -->
+                <!-- Contact form -->
+                <div class="col-sm-4">
+                    <div class="contact-detail-box text-center">
+                        <i class="fa fa-clock-o fa-2x"></i>
+                        <h4>Time: {{elapsed}}</h4>
+                    </div>
+                </div><!-- end col -->
+                <div class="col-sm-4">
+                    <div class="contact-detail-box text-center">
+                        <i class="fa fa-road fa-2x"></i>
+                        <h4>Distance: {{distance}}KM</h4>
+                    </div>
+                </div><!-- end col -->
+
+                <div class="col-sm-4">
+                    <div class="contact-detail-box text-center">
+                        <i class="fa fa-tachometer fa-2x"></i>
+                        <h4>Speed: {{this.averageSpeed}} KPH </h4>
+                    </div>
+                </div><!-- end col -->
+                <div class="comments-container">
+                    <div class="container">
+                        <div class="row text-center">
+
+                            <div class="col-md-12">
+                                <div class="widget-area no-padding blank">
+                                    <div class="status-upload">
+                                        <form>
+                                            <textarea name="comment" [(ngModel)]="comment.comment"
+                                                      placeholder="How did {{activity.name}} do ?"></textarea>
+                                            <ul>
+
+                                            </ul>
+                                            <button type="submit" (click)="postComment(activity._id)"
+                                                    class="btn btn-primary"><i class="fa fa-share"></i>Post Comment
+                                            </button>
+                                            <button type="submit" (click)="postKudos(activity._id)"
+                                                    class="btn btn-primary"><i class="fa fa-hand-rock-o"></i>Give Kudo
+                                            </button>
+                                        </form>
+                                    </div><!-- Status Upload  -->
+                                </div><!-- Widget Area -->
+                            </div>
+
+                        </div>
+                    </div>
+                    <ul id="comments-list" class="comments-list">
+                        <li>
+                            <div class="comment-main-level" *ngFor="let post of activity.comments.slice().reverse()">
+                                <!-- Avatar -->
+                                <div class="comment-avatar"><img
+                                        src="http://www.cermav.cnrs.fr/sites/all/themes/cermav/images/anonymousUser.jpg"
+                                        alt=""></div>
+                                <!-- Contenedor del Comentario -->
+                                <div class="comment-box">
+                                    <div class="comment-head">
+                                        <h6 class="comment-name by-author" *ngIf="post.email == activity.email"><a>{{post.name}}</a>
+                                        </h6>
+                                        <h6 class="comment-name" *ngIf="post.email != activity.email">
+                                            <a>{{post.name}}</a></h6>
+                                        <span>{{post.date | date:'d MMM y, h:mm a'}}</span>
+                                    </div>
+                                    <div class="comment-content">
+                                        {{post.comment}}
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
